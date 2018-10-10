@@ -1,0 +1,11 @@
+wb = xlsx_package.workbook
+
+wb.add_worksheet(name: "Products") do |sheet|
+  # this is the head row of your spreadsheet
+  sheet.add_row %w(name, model, brand, year, ram, external_storage)
+  
+  # each user is a row on your spreadsheet
+  @all_products.each do |product|
+    sheet.add_row [product.name, product.model, product.brand, product.year, product.ram, product.external_storage]
+  end
+end
