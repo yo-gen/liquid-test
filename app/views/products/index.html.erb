@@ -17,7 +17,10 @@ Search Form: <br>
 <%= link_to "Reset Search", products_path %>
 
 <h1>Products</h1>
-<%= link_to "Export all Matching products as Excel", products_path(request.parameters.merge({format: "xlsx"})), download: 'products.xlsx', class: "btn btn-success pull-right" %>
+<%= link_to products_path(request.parameters.merge({format: "xlsx"})), download: 'products.xlsx', class: "btn btn-success pull-right" do %>
+  <i class="fa fa-file-excel-o"></i>
+  <span>Export all Matching products as Excel</span>
+<% end %>
 <table class="table">
   <thead>
     <tr>
